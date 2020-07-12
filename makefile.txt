@@ -1,0 +1,12 @@
+all: readme.md
+	echo "#Bash, makefile and git project" > readme.md
+	echo "**Last make run:**" >> readme.md
+	date >> readme.md
+	echo "*Number of lines in guessinggame.sh:*"
+	wc -l guessinggame.sh >> readme.md
+
+readme.md:
+	touch readme.md
+
+clean:
+	rm readme.md
