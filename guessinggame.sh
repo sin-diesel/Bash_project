@@ -1,11 +1,11 @@
 
 #!/usr/bin/env bash
 function get_lines { # counts the amount of files in current directory using ls to get info
-	ls -a b-l -G -p | egrep '\-r.*' | wc -l
+	ls -a -l -G -p | egrep '\-r.*' | wc -l
 }
 
 answer=$(get_lines)
-num=0
+num=-1
 
 while [[ ! $num -eq $answer ]]
 do
