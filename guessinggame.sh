@@ -1,6 +1,7 @@
 
+#!/usr/bin/env bash
 function get_lines { # counts the amount of files in current directory using ls to get info
-	ls -l -G -p | egrep '\-r.*' | wc -l
+	ls -a b-l -G -p | egrep '\-r.*' | wc -l
 }
 
 answer=$(get_lines)
