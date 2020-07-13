@@ -1,7 +1,7 @@
 
 #!/usr/bin/env bash
 function get_lines { # counts the amount of files in current directory using ls to get info
-	ls -a -l -G -p | egrep '\-r.*' | wc -l
+	ls -a -l -G -p | egrep '^\-.*' | wc -l
 }
 
 answer=$(get_lines)
@@ -14,17 +14,17 @@ do
 
 read num
 
-if [[ ! $num =~ ^[1-9][0-9]*$ ]] && [[ ! $num -eq 0 ]]
+if [[ ! $num =~ ^[1-9]?[0-9]*$ ]]
 then
 	echo "Sorry, seems to be incorrect input, try again"
 	num=-1
 fi
 
-if [[ $num -lt $answer ]] && [[ ! $num -eq -1 ]]
+if [[ ! $num -eq -1 ]] && [[ $num -lt $answer ]]
 then
 	echo "The answer is greater than the number you entered, try again"
 
-elif [[ $num -gt $answer ]] && [[ ! $num -eq -1 ]]
+elif [[ ! $num -eq -1 ]] && [[ $num -gt $answer ]]
 
 then
 	echo "The answer is less than the number you entered, try again"
